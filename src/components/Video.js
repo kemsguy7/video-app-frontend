@@ -9,4 +9,4 @@ v1608169738/video1_cvrjfm.mp4" className="video__player" loop></video>
         </div>
     )
 }
-export default video 
+export default Video 

@@ -1,16 +1,15 @@
 
 import './App.css';
-import Header from './components/Header'
-import DatingCards from './components/DatingCards';
-import SwipeButtons from './components/swipeButtons';
+import Video from "./components/Video"
+
 
 function App() {
   return (
     <div className="app"> 
-      <Header />
-      <DatingCards />
-      <SwipeButtons />
-      
+      <div className="app__videos"> 
+        <Video /> 
+        <Video />
+      </div>
     </div>
   );
 }
