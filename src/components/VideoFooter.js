@@ -3,17 +3,17 @@ import './VideoFooter.css'
 import MusicNoteIcon from '@material-ui/icons/MusicNote'; 
 import Marquee from "react-fast-marquee";
 
-const VideoFooter = () => {
+const VideoFooter = ({channel , description, song}) => {
     return (
         <div className="videoFooter"> 
             <div className="videoFooter__text"> 
-                <h3> @Kemsguy7</h3> 
-                <p> Home PC Setup </p>
+                <h3> @{channel}</h3> 
+                <p> {description} </p>
                 <div className="videoFooter__ticker"> 
                     <MusicNoteIcon className="videoFooter__icon" />
                     <p> Music: Chill Vibes </p>
                     <Marquee>
-                        <p>I am a Windows PC</p>
+                        <p> {song} </p>
                     </Marquee>
                    
                 </div>
