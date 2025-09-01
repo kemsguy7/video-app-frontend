@@ -7,15 +7,15 @@ import ShareIcon from '@material-ui/icons/Share';
 
 const VideoSidebar = ({ likes, shares, messages }) => { 
     const [liked, setLiked] = useState(false) 
-    function countLike( ) { 
-        likes =likes++;
-        console.log("Total Likes  :",likes);
-    }
+    // function countLike( ) { 
+    //     likes =likes++;
+    //     console.log("Total Likes  :",likes);
+    // }
     return (
         <div className="videoSidebar">  
             <div className="videoSidebar__button"> 
                 { liked ? <FavoriteIcon fontSize="large" onClick={e => setLiked(false)}  /> : <FavoriteBorderIcon fontSize="large" onClick={e => setLiked(true)} /> }
-                    <p> {liked  ? countLike() : likes } </p>
+                    <p> {liked  ? +likes + 1  : likes } </p>
             </div>
             <div className="videoSidebar_button">  
                 <MessageIcon fontSize ="large" />

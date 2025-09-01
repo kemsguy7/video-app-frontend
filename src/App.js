@@ -1,4 +1,4 @@
-
+import {useState, useEffect} from 'react';
 import './App.css';
 import Video from "./components/Video"
 import axios from './components/axios'
@@ -29,20 +29,8 @@ function App() {
             shares={shares}
             messages={messages}
           />
-
         ))}
-        {/* {videos.map(video => (
-          <Video 
-            key={video._id}
-            url={video.url}
-            channel={video.channel}
-            description={video.description}
-            song={video.song}
-            likes={video.likes}
-            shares={video.shares}
-            messages={video.messages}
-          />
-        ))} */}
+       
       
       </div>
     </div>
