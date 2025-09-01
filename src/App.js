@@ -1,32 +1,49 @@
 
 import './App.css';
 import Video from "./components/Video"
+import axios from './components/axios'
 
 
 function App() {
+  const [videos, setVideos] = useState([])
+  useEffect(() => {
+    async function fetchData() {
+      const result = await axios.get('/v2/posts')
+      setVideos(result.data) 
+      return result
+    }
+    fetchData()
+  }, [])
+  
   return (
     <div className="app"> 
       <div className="app__videos"> 
-        <Video 
-        url ="https://res.cloudinary.com/dxkxvfo2o/video/upload/
-v1608169738/video1_cvrjfm.mp4" 
-    channel ="kemsguy " 
-    description ="Home PC Setup"
-    song ="Chill Vibes"
-    likes ={100}
-    shares ={50}
-    messages ={25}
-/> 
-             <Video 
-        url ="https://res.cloudinary.com/dxkxvfo2o/video/upload/
-v1608169738/video1_cvrjfm.mp4" 
-    channel ="kemsguy " 
-    description ="Home PC Setup"
-    song ="Chill Vibes"
-    likes ={100}
-    shares ={50}
-    messages ={25}
-/> 
+        {videos.map(({ url, channel, description, song, likes, shares, messages }) => (
+          <Video 
+            key={url}
+            url={url}
+            channel={channel}
+            description={description} 
+            song={song}
+            likes={likes}
+            shares={shares}
+            messages={messages}
+          />
+
+        ))}
+        {/* {videos.map(video => (
+          <Video 
+            key={video._id}
+            url={video.url}
+            channel={video.channel}
+            description={video.description}
+            song={video.song}
+            likes={video.likes}
+            shares={video.shares}
+            messages={video.messages}
+          />
+        ))} */}
+      
       </div>
     </div>
   );
@@ -34,4 +51,7 @@ v1608169738/video1_cvrjfm.mp4"
 
 
 export default App;
+
+
+
 
